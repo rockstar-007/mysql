@@ -1,19 +1,13 @@
 # mysql
-for droping table 
-drop table employee;
-drop table department;
-
-
-
-----------------------------------------------------------------------------
+sql>
 Create table Department(
 dept_id Number (10) primary key,
 department_name varchar(10)
 );
 op
 SQL query successfully executed. However, the result set is empty.
-
 ----------------------------------------------------------------------------
+sql>
 Create table employee(
 employee_id number(10) primary key,
 employee_name varchar(20) not null,
@@ -27,7 +21,7 @@ table created.
 ----------------------------------------------------------------------------
 query--> inserting values into department
 Insert values into department table 10 rows
-
+sql>
 INSERT INTO department(dept_id, department_name) VALUES
 (1, 'HR'),
 (2, 'Finance'),
@@ -96,9 +90,7 @@ INSERT INTO employee (employee_id, employee_name, salary, Joindate, dept_id) VAL
 (50, 'Henry Torres', 66000, '2021-03-11', 10);
 output
 successfully inserted.
-
 ----------------------------------------------------------------------------
-
 query--> do operation on select, where, like, between, and is null, not nullm, exists
 1] where operation
 select * from employee
@@ -109,7 +101,6 @@ employee_id	employee_name	salary	Joindate	dept_id
 21	Rebecca Nelson	54000	2018-12-10		1
 31	Deborah 	53000	2018-01-30		1
 41	Sara Morris	55000	2019-01-20		1
-
 ----------------------------------------------------------------------------
  query --> select salary between 50000 and 65000
 sql> 
@@ -151,3 +142,7 @@ output
 employee_id	employee_name	salary	Joindate	dept_id
 1	Alice Johnson	55000	2022-01-15	1
 ----------------------------------------------------------------------------
+for droping table 
+sql>
+drop table employee;
+drop table department;
