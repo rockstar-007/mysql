@@ -1,13 +1,18 @@
-# mysql
-sql>
+for droping table 
+drop table employee;
+drop table department;
+
+
+
+----------------------------------------------------------------------------
 Create table Department(
 dept_id Number (10) primary key,
 department_name varchar(10)
 );
 op
 SQL query successfully executed. However, the result set is empty.
+
 ----------------------------------------------------------------------------
-sql>
 Create table employee(
 employee_id number(10) primary key,
 employee_name varchar(20) not null,
@@ -21,7 +26,7 @@ table created.
 ----------------------------------------------------------------------------
 query--> inserting values into department
 Insert values into department table 10 rows
-sql>
+
 INSERT INTO department(dept_id, department_name) VALUES
 (1, 'HR'),
 (2, 'Finance'),
@@ -90,7 +95,9 @@ INSERT INTO employee (employee_id, employee_name, salary, Joindate, dept_id) VAL
 (50, 'Henry Torres', 66000, '2021-03-11', 10);
 output
 successfully inserted.
+
 ----------------------------------------------------------------------------
+
 query--> do operation on select, where, like, between, and is null, not nullm, exists
 1] where operation
 select * from employee
@@ -101,6 +108,7 @@ employee_id	employee_name	salary	Joindate	dept_id
 21	Rebecca Nelson	54000	2018-12-10		1
 31	Deborah 	53000	2018-01-30		1
 41	Sara Morris	55000	2019-01-20		1
+
 ----------------------------------------------------------------------------
  query --> select salary between 50000 and 65000
 sql> 
@@ -142,7 +150,75 @@ output
 employee_id	employee_name	salary	Joindate	dept_id
 1	Alice Johnson	55000	2022-01-15	1
 ----------------------------------------------------------------------------
-for droping table 
+Query to use.in operation 
 sql>
-drop table employee;
-drop table department;
+SELECT employee_id,employee_name
+FROM employee
+WHERE salary IN (55000,60000,75000);
+
+o/p
+"1"	"Alice Johnson"
+"2"	"Bob Smith"
+"3"	"Charlie Brown"
+"41"	"Sara Morris"
+----------------------------------------------------------------------------
+Query. Using alter operation. 
+ sql>
+ALTER TABLE employees
+ADD age INT;
+
+o/p inserted.
+ 2.
+sql>
+alter table abhi 
+drop column address;
+o/p
+deleted .
+   ...modify....
+..rename ->
+sql>
+ALTER TABLE abhi
+RENAME abhi_salary to salary;
+o/p 
+renamed>
+QUERY: CHANGING TABLE NAME :
+SQL>
+ALTER TABLE FOR_ALTER
+RENAME TO ABHI;
+O.P-
+CHANGED SUCESSFULLY
+----------------------------------------------------------------------------
+
+TO USE UPDATE AND SET 
+QUERY : TO CHANE THE VALUE AS NULL
+SQL>
+UPDATE  XYZ 
+SET salary = NULL
+WHERE employee_id= 50;
+O/P: "50"	"null"
+-- WITHOUT UPDATE WE CANT USE SET
+query: now changing value gain  to value
+SELECT * from xyz
+where employee_id = 50;
+o/p:
+"50"	"Henry Torres"	"55000"	"2021-03-11"	"10"
+----------------------------------------------------------------------------
+QUERY : TO SHOW ONLY TOTAL SALARY OF ALL EMPLOYEE
+SQL>
+SELECT  sum(salary)
+FROM employee
+ORDER BY salary DESC
+LIMIT 1;
+O/P
+"3745000"
+----------------------------------------------------------------------------
+QUERY : TO SHOW WHO HAS MAX SALARY 
+SQL>
+SELECT  employee_id,employee_name,MAX(salary)
+FROM employee
+ORDER BY salary DESC
+LIMIT 1;
+O/P-
+"29"	"Emily Hall"	"96000".
+----------------------------------------------------------------------------
+COMMIT;
