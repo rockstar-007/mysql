@@ -222,4 +222,18 @@ LIMIT 1;
 O/P-
 "29"	"Emily Hall"	"96000".
 ----------------------------------------------------------------------------
+query : using order by 
+sql>
+ select EMPLOYEE_ID,EMPLOYEE_NAME from xyz
+  2  where salary <=55000
+  3  order by salary;
+  o/p
+  EMPLOYEE_ID EMPLOYEE_NAME
+----------- --------------------
+         31 Deborah Rodriguez
+         21 Rebecca Nelson
+          1 Alice Johnson
+         41 Sara Morris
+ 
+
 COMMIT;
