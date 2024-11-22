@@ -234,6 +234,98 @@ sql>
          21 Rebecca Nelson
           1 Alice Johnson
          41 Sara Morris
- 
+----------- -------------------- 
+SQL> create table products(
+  2  product_id number(20) primary key ,
+  3  product_name varchar(20) not null,
+  4  prize number(20),
+  5  category varchar2(20));
 
+Table created.
+----------- -------------------- 
+SQL> INSERT ALL
+  2      INTO products (product_id, product_name, prize, category) VALUES (1, 'Laptop', 1500, 'Electronics')
+  3      INTO products (product_id, product_name, prize, category) VALUES (2, 'Smartphone', 800, 'Electronics')
+  4      INTO products (product_id, product_name, prize, category) VALUES (3, 'Washing Machine', 600, 'Home Appliances')
+  5      INTO products (product_id, product_name, prize, category) VALUES (4, 'Refrigerator', 1000, 'Home Appliances')
+  6      INTO products (product_id, product_name, prize, category) VALUES (5, 'Headphones', 150, 'Accessories')
+  7      INTO products (product_id, product_name, prize, category) VALUES (6, 'Smartwatch', 250, 'Accessories')
+  8      INTO products (product_id, product_name, prize, category) VALUES (7, 'Microwave', 200, 'Home Appliances')
+  9      INTO products (product_id, product_name, prize, category) VALUES (8, 'Coffee Maker', 120, 'Home Appliances')
+ 10      INTO products (product_id, product_name, prize, category) VALUES (9, 'TV', 500, 'Electronics')
+ 11      INTO products (product_id, product_name, prize, category) VALUES (10, 'Camera', 350, 'Electronics')
+ 12  SELECT * FROM dual;
+
+10 rows created.
+----------- -------------------- 
+SQL> create table departments(
+  2    dept_id number(20) primary key,
+  3    dept_name varchar(20) not NULL,
+  4    location varchar(20));
+
+Table created.
+----------- --------------------
+SQL> insert all
+  2   INTO departments (dept_id, dept_name, location) VALUES (1, 'HR', 'New York')
+  3   INTO departments (dept_id, dept_name, location) VALUES (2, 'IT', 'San Francisco')
+  4   INTO departments (dept_id, dept_name, location) VALUES (3, 'Finance', 'London')
+  5   INTO departments (dept_id, dept_name, location) VALUES (4, 'Marketing', 'Los Angeles')
+  6   INTO departments (dept_id, dept_name, location) VALUES (5, 'Sales', 'Chicago')
+  7   INTO departments (dept_id, dept_name, location) VALUES (6, 'R&D', 'Berlin')
+  8   INTO departments (dept_id, dept_name, location) VALUES (7, 'Customer Support', 'Toronto')
+  9   INTO departments (dept_id, dept_name, location) VALUES (8, 'Legal', 'Paris')
+ 10   INTO departments (dept_id, dept_name, location) VALUES (9, 'Operations', 'Tokyo')
+ 11   INTO departments (dept_id, dept_name, location) VALUES (10, 'Product Management', 'Sydney')
+ 12  select * from dual;
+10 rows created.
+----------- --------------------
+  select product_name,category from products
+  2    where prize > 1000;
+
+PRODUCT_NAME         CATEGORY
+-------------------- --------------------
+Laptop               Electronics
+----------- --------------------
+CREATE table works(
+  employee_id number(20) PRIMARY key,
+  company_name varchar(20) not null,
+  salary number(20));
+  
+Table created.
+----------- --------------------
+SQL> insert all
+  2   INTO works (employee_id, company_name, salary) VALUES (2, 'HealthInc', 75000)
+  3   INTO works (employee_id, company_name, salary) VALUES (3, 'FinGlobal', 90000)
+  4   INTO works (employee_id, company_name, salary) VALUES (4, 'EduSolutions', 65000)
+  5   INTO works (employee_id, company_name, salary) VALUES (5, 'RetailPlus', 55000)
+  6   INTO works (employee_id, company_name, salary) VALUES (6, 'AutoMotives', 70000)
+  7   INTO works (employee_id, company_name, salary) VALUES (7, 'TechCorp', 85000)
+  8   INTO works (employee_id, company_name, salary) VALUES (8, 'RetailPlus', 60000)
+  9   INTO works (employee_id, company_name, salary) VALUES (9, 'HealthInc', 77000)
+ 10   INTO works (employee_id, company_name, salary) VALUES (10, 'FinGlobal', 95000)
+ 11  select * from dual;
+
+9 rows created.
+----------- --------------------
+--INSERT INTO works (employee_id, company_name, salary) VALUES (1, 'TechCorp', 80000);
+sql>select avg(salary) as avg_salary from works;
+avg_salary
+"75200"
+----------- --------------------
+sql>select dept_name,location from departments
+where location like 's%';
+"IT"	"San Francisco"
+"Product Management"	"Sydney"
+----------- --------------------
+sql>SELECT DISTINCT(company_name) from works;
+"TechCorp"
+"HealthInc"
+"FinGlobal"
+"EduSolutions"
+"RetailPlus"
+"AutoMotives"
+
+----------- --------------------
+
+----------- --------------------
 COMMIT;
