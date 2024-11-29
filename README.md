@@ -376,6 +376,18 @@ end;
 /
 -- 2 nd part end
 ----------- --------------------
+-- trigger
+create or replace trigger etriger
+after insert on employe_09
+for each row 
+begin 
+   DBMS_OUTPUT.PUT_LINE('new employee added:'||:new.employee_name);
+end;
+/
+-- then add a new row
+INSERT INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES
+(7, 'Olivia Martin', TO_DATE('1994-06-18', 'YYYY-MM-DD'), 70000, TO_DATE('2020-01-01', 'YYYY-MM-DD'), 'MCA');
+
 ----------- --------------------
 
 COMMIT;
