@@ -390,5 +390,25 @@ INSERT INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualificat
 (7, 'Olivia Martin', TO_DATE('1994-06-18', 'YYYY-MM-DD'), 70000, TO_DATE('2020-01-01', 'YYYY-MM-DD'), 'MCA');
 
 ----------- --------------------
+q) a function to return the current the current system date
+ sql>
+create or replace function get_sydate
+return date as 
+begin 
+  return get_sydate;
+end get_sydate;
+o/p: function created .
+select sydate from dual;
+
+A FUNCTON TO CALCULATE THESQUARE OF A NUMBER
+sql>
+create or replace function calculate_square(
+ pnumber in number 
+) return number as 
+begin 
+  return pnumber*pnumber;
+end calculate_square;
+a set of code to add code in sql ,
+-------------------------------------
 
 COMMIT;
