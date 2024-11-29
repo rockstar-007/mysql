@@ -326,6 +326,56 @@ sql>SELECT DISTINCT(company_name) from works;
 "AutoMotives"
 
 ----------- --------------------
-
+--29|11|24
+create table employe_09(
+   employee_id number(10) primary key,
+   employee_name varchar2(20),
+    dob date,
+    salary number(10),
+    doj date,
+    qualification varchar(20));
+o/p : table created
 ----------- --------------------
+INSERT
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(1, 'John Doe', TO_DATE('1990-05-15', 'YYYY-MM-DD'), 50000, TO_DATE('2015-06-01', 'YYYY-MM-DD'), 'MBA'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(2, 'Jane Smith', TO_DATE('1985-11-22', 'YYYY-MM-DD'), 55000, TO_DATE('2016-08-20', 'YYYY-MM-DD'), 'B.Tech'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(3, 'Emily Clark', TO_DATE('1992-03-30', 'YYYY-MM-DD'), 48000, TO_DATE('2017-01-10', 'YYYY-MM-DD'), 'M.Sc'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(4, 'Michael Johnson', TO_DATE('1988-07-14', 'YYYY-MM-DD'), 60000, TO_DATE('2014-09-15', 'YYYY-MM-DD'), 'BBA'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(5, 'Sarah Brown', TO_DATE('1995-02-01', 'YYYY-MM-DD'), 45000, TO_DATE('2019-03-25', 'YYYY-MM-DD'), 'BCA'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(6, 'David Wilson', TO_DATE('1987-12-10', 'YYYY-MM-DD'), 65000, TO_DATE('2013-07-22', 'YYYY-MM-DD'), 'M.Tech'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(7, 'Olivia Martin', TO_DATE('1994-06-18', 'YYYY-MM-DD'), 70000, TO_DATE('2020-01-01', 'YYYY-MM-DD'), 'MCA'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(8, 'James Anderson', TO_DATE('1983-10-25', 'YYYY-MM-DD'), 75000, TO_DATE('2012-04-10', 'YYYY-MM-DD'), 'PhD'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(9, 'Sophia Lee', TO_DATE('1990-08-05', 'YYYY-MM-DD'), 52000, TO_DATE('2018-05-30', 'YYYY-MM-DD'), 'B.Com'),
+INTO employe_09 (employee_id, employee_name, dob, salary, doj, qualification) VALUES(10, 'William Taylor', TO_DATE('1986-01-12', 'YYYY-MM-DD'), 56000, TO_DATE('2011-11-05', 'YYYY-MM-DD'), 'M.A');
+o/p :
+rows inserted
+----------- --------------------
+ q) creating view
+ sql>create view e.info as 
+select employee_id,employee_name,salary 
+from employe_09;
+o/p: view created
+-- to vieew 
+sql> select * from einfo
+----------- --------------------
+q)pl/sql query
+sql>
+set serveroutputon :
+create or replace procedure greet_user(p_name in varchar2) AS
+begin 
+  DBMS_OUTPUT.PUT_LINE('HELLO,'||p_name||'!');
+end; 
+/ 
+--1stpart end
+
+--excuting the program
+sql>
+begin 
+  greet_user('john');
+end;
+/
+-- 2 nd part end
+----------- --------------------
+----------- --------------------
+
 COMMIT;
