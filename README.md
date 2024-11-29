@@ -5,6 +5,7 @@ drop table department;
 
 
 ----------------------------------------------------------------------------
+sql>
 Create table Department(
 dept_id Number (10) primary key,
 department_name varchar(10)
@@ -24,9 +25,9 @@ foreign key(dept_id) references department(dept_id)
 op
 table created.
 ----------------------------------------------------------------------------
-query--> inserting values into department
+query inserting values into department
 Insert values into department table 10 rows
-
+sql>
 INSERT INTO department(dept_id, department_name) VALUES
 (1, 'HR'),
 (2, 'Finance'),
@@ -41,7 +42,7 @@ INSERT INTO department(dept_id, department_name) VALUES
 output 
 inserted successfully.
 ----------------------------------------------------------------------------
-Query--Insert values into employee table 50 rows
+Query Insert values into employee table 50 rows
 INSERT ALL 
 INTO employee (employee_id, employee_name, salary, Joindate, dept_id) VALUES(1, 'Alice Johnson', 55000, TO_DATE('2022-01-15', 'YYYY-MM-DD'), 1)
 INTO employee (employee_id, employee_name, salary, Joindate, dept_id) VALUES(2, 'Bob Smith', 60000, TO_DATE('2021-03-22', 'YYYY-MM-DD'), 2)
@@ -99,7 +100,7 @@ successfully inserted.
 
 ----------------------------------------------------------------------------
 
-query--> do operation on select, where, like, between, and is null, not nullm, exists
+query   do operation on select, where, like, between, and is null, not nullm, exists
 1] where operation
 select * from employee
 where salary<=55000;
@@ -111,7 +112,7 @@ employee_id	employee_name	salary	Joindate	dept_id
 41	Sara Morris	55000	2019-01-20		1
 
 ----------------------------------------------------------------------------
- query --> select salary between 50000 and 65000
+ query   select salary between 50000 and 65000
 sql> 
 SELECT * FROM employee
  where salary BETWEEN 50000 AND 65000;
